@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flower Shop</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        select, th, td {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+
+        <h2>Cake World</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Items</a></li>
+            <li><a href="#">About US</a></li>
+        </ul>
+    </nav>
+    <center>
+        <label for="cakeSelect">Select a Cake:</label>
+    <select id="cakeSelect">
+        <option value="Chocolate">Chocolate Cake</option>
+        <option value="vanilla">Vanilla Cake</option>        
+        <option value="strawberry">Strawberry Cake</option>
+        <!-- Add more cake options as needed -->
+    </select>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Cake Type</th>
+                <th>Price (per slice)</th>
+            </tr>
+        </thead>
+        <tbody id="cakeRates">
+            <!-- This is where the rates will be displayed -->
+        </tbody>
+    </table>
+
+    <script>
+        // Define cake rates
+        const cakeRates = {
+            vanilla: 3.99,
+            Chocolate: 4.99,
+            strawberry: 5.99,
+            // Add more rates as needed
+        };
+
+        const cakeSelect = document.getElementById("cakeSelect");
+        const cakeRatesTable = document.getElementById("cakeRates");
+
+        // Function to update the table when a cake is selected
+        function updateCakeRate() {
+            const selectedCake = cakeSelect.value;
+            const rate = cakeRates[selectedCake];
+
+            if (rate) {
+                cakeRatesTable.innerHTML = `
+                    <tr>
+                        <td>${selectedCake} Cake</td>
+                        <td>Rs ${rate.toFixed(2)} per slice</td>
+                    </tr>
+                `;
+            } else {
+                cakeRatesTable.innerHTML = `<tr><td>Invalid selection</td><td></td></tr>`;
+            }
+        }
+
+        // Initial update
+        updateCakeRate();
+
+        // Add event listener to the dropdown to update the table when a new cake is selected
+        cakeSelect.addEventListener("change", updateCakeRate);
+    </script>
+  </center>
+</body>
+</html>

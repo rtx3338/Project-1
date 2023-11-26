@@ -1,0 +1,88 @@
+
+        
+        /* Set a background color and font family */
+        body 
+            {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            }
+        nav h2
+            {
+                margin-left: 20px;
+            }
+        nav 
+            {
+            background-color: seagreen;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            }
+        nav ul
+            {
+                display: inline-flex;
+
+            }
+        nav ul li 
+            {
+                padding:5px;
+                font-size: 15px;
+                list-style: none;
+            }
+
+        nav ul li a
+            {
+                color: white;
+                border-radius: 9px;
+                background-color:  ;
+                border: 2px solid black;
+                padding:10px;
+                text-decoration: none;       
+            }
+        nav ul li a:hover
+            {
+
+                border: 2px solid white;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+        
+
+        /* Style the flower images */
+        .flower {
+
+            display: inline-block;
+            border: 8px solid white;
+            border-radius: 10px;
+            margin: 10px;
+            width: 200px;
+            transition: box-shadow 0.3s; /* Smooth transition for the hover effect */
+
+
+        }
+        .flower a 
+            {
+                text-decoration: none;
+                color:Black;
+            }
+        .flower:hover
+            {
+               box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2); 
+            }
+        #first-div
+            {
+                display: inline-flex;
+                
+            }
+        #im:hover
+            {
+                transform: scale(1.01);
+            }
+        /* Style the footer */
+        footer {
+            background-color: seagreen;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
